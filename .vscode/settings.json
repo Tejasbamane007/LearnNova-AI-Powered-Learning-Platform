@@ -1,0 +1,5 @@
+{
+    "zencoder.enableRepoIndexing": true,
+    "json.schemaDownload.enable": false,
+    "json.validate.enable": true
+}
