@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 */node_modules/
+package-lock.json
+*/package-lock.json
+bun.lockb
+*/bun.lockb
 
 # Environment variables
 .env
