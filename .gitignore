@@ -92,6 +92,10 @@ temp/
 *.swo
 *~
 
+# Disabled git directories
+.git_disabled/
+*/.git_disabled/
+
 # OS generated files
 .DS_Store
 .DS_Store?
