@@ -1,2 +1,0 @@
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-npx nodemon server.js
