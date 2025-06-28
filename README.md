@@ -170,14 +170,6 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ---
 
-## Security Best Practices
-
-- `.env` is listed in `.gitignore` and should never be committed.
-- If secrets are accidentally committed:
-  - Regenerate keys immediately
-  - Use tools like `git filter-repo` to scrub them from history
-
----
 
 ## License
 
