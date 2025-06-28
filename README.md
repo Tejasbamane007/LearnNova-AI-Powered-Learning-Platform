@@ -91,8 +91,9 @@ npx nodemon server.js
 
 ### 4. Frontend Setup
 
+In another terminal
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
