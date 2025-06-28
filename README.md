@@ -128,10 +128,9 @@ MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/?retryWrites=t
 Generate a strong secret key using PowerShell:
 
 ```powershell
-[guid]::NewGuid().ToString("N")
+$chars = @(); 1..128 | ForEach-Object { $chars += [char](Get-Random (48..57 + 97..102)) }; $chars -join ''
 ```
 
-Or use a tool like [randomkeygen.com](https://randomkeygen.com)
 
 ---
 
