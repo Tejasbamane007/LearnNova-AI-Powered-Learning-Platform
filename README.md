@@ -104,7 +104,7 @@ npm run dev
 A background video is used on the landing page. Please download it and place it at:
 
 **Path:** `frontend/public/bg.mp4`  
-**Download Link:** [Click here to download bg.mp4](https://drive.google.com/file/d/YOUR_VIDEO_FILE_ID/view?usp=sharing)
+**Download Link:** [Click here to download bg.mp4](https://drive.google.com/drive/folders/1Rj4epXnRAEU7Crm-BxEIygsXnaZmjveu?usp=sharing)
 
 ---
 
