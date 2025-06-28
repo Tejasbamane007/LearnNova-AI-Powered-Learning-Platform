@@ -1,39 +1,47 @@
-# Learnova – Personalized AI Learning Platform 🚀
+# Learnova – AI-Powered Learning Platform
 
-**Learnova** is an AI-powered education platform built with **React**, **Express.js**, **MongoDB**, and **Gemini (Google Generative AI)**. It enables students to generate notes, quizzes, study plans, and track their progress — all personalized using AI.
-
----
-
-## ✨ Features
-
-- 📝 Generate Topic-wise Notes  
-- 🧠 Auto-generated Quizzes  
-- 📅 AI-powered Study Plan Generator  
-- 📊 Dashboard: Quiz Scores & Course Progress  
-- 🔐 Google OAuth 2.0 Authentication  
-- 🤖 Gemini Chatbot Integration
+**Learnova** is a dynamic and intelligent learning management platform that leverages AI and modern web technologies to enhance the educational experience. Built with **React**, **Express.js**, **MongoDB**, **TypeScript**, and **Gemini (Google Generative AI)**, Learnova empowers students with personalized learning tools and insights.
 
 ---
 
-## 🖼️ Screenshots
+## Features
 
-### 1. Landing Page  
-![Landing](screenshots/landing.png)
-
-### 2. Course Setup  
-![Course Setup](screenshots/course-setup.png)
-
-### 3. Notes Page  
-![Notes](screenshots/notes.png)
-
-### 4. Dashboard Charts  
-![Dashboard](screenshots/dashboard.png)
-
-> 📁 All screenshots are stored in the `/screenshots/` directory.
+- Topic-wise Notes Generation  
+- Auto-generated Quizzes  
+- AI-powered Study Plan Generator  
+- Dashboard with Quiz Scores and Course Progress  
+- Google OAuth 2.0 Authentication  
+- Gemini Chatbot Integration
 
 ---
 
-## 🧰 Tech Stack
+## Screenshots
+
+### Landing Page  
+![image](https://github.com/user-attachments/assets/d5869f42-04cf-4ed3-b48b-5b7eb3fcc3ea)
+
+### Course Setup  
+![image](https://github.com/user-attachments/assets/8f8b0b6f-1a67-47f1-b884-d646a85b72b7)
+
+### Select what to generate
+![image](https://github.com/user-attachments/assets/2bc13818-c613-4a17-9eec-0e5450fd85d7)
+
+### Notes Page and Chat bot
+![image](https://github.com/user-attachments/assets/37b52b42-0354-4d47-bb6c-430f5ec074a2)
+![image](https://github.com/user-attachments/assets/c010d67b-377e-4631-bca3-de327478e4e7)
+
+### My Courses
+![image](https://github.com/user-attachments/assets/b571e7ab-5f02-4b55-80a2-d48bf12f81b3)
+
+### Dashboard Charts  
+![image](https://github.com/user-attachments/assets/37e7ad57-f6a6-464a-9a8b-f15a5f586dc4)
+
+### Profile 
+![image](https://github.com/user-attachments/assets/6f85e294-8fa7-4380-abca-9d128690ca6a)
+
+---
+
+## Tech Stack
 
 | Frontend         | Backend     | AI Integration | Database      |
 |------------------|-------------|----------------|---------------|
@@ -41,9 +49,9 @@
 
 ---
 
-## 🚀 Local Development Setup
+## Getting Started
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Tejasbamane007/LearNova-AI-powered-learning-managment-system.git
@@ -52,7 +60,7 @@ cd LearnNova
 
 ---
 
-### 2️⃣ Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd backend
@@ -73,7 +81,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ---
 
-### 3️⃣ Start Backend Server
+### 3. Start Backend Server
 
 ```bash
 npx nodemon server.js
@@ -81,7 +89,7 @@ npx nodemon server.js
 
 ---
 
-### 4️⃣ Frontend Setup
+### 4. Frontend Setup
 
 ```bash
 cd ../frontend
@@ -91,63 +99,57 @@ npm run dev
 
 ---
 
-## 🎥 Background Video Download
+## Background Video
 
-A background video is used on the landing page. Please download it and place it in the following path:
+A background video is used on the landing page. Please download it and place it at:
 
-📁 Path: `frontend/public/bg.mp4`  
-🔗 [Click here to download bg.mp4](https://drive.google.com/file/d/YOUR_VIDEO_FILE_ID/view?usp=sharing)
+**Path:** `frontend/public/bg.mp4`  
+**Download Link:** [Click here to download bg.mp4](https://drive.google.com/file/d/YOUR_VIDEO_FILE_ID/view?usp=sharing)
 
 ---
 
-## 🔐 Environment Variable Configuration
+## Configuration Details
 
-### 🔸 MongoDB URI
+### MongoDB URI
 
 1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
-2. Create a free cluster
+2. Create a new cluster
 3. Click **Connect → Connect your application**
-4. Copy the connection string and set it as:
+4. Copy the connection string and set it in `.env`:
 
 ```env
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ---
 
-### 🔸 JWT Secret
+### JWT Secret
 
-Generate a secure token in PowerShell:
+Generate a strong secret key using PowerShell:
 
 ```powershell
 [guid]::NewGuid().ToString("N")
 ```
 
-Then use it in your `.env`:
-
-```env
-JWT_SECRET=your_generated_token
-```
-
-Or generate using: [https://randomkeygen.com](https://randomkeygen.com)
+Or use a tool like [randomkeygen.com](https://randomkeygen.com)
 
 ---
 
-### 🔸 Google OAuth 2.0 Setup
+### Google OAuth 2.0 Setup
 
-1. Visit [Google Cloud Console](https://console.cloud.google.com/)
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project
-3. Go to **APIs & Services → OAuth consent screen**
-4. Fill basic info and save
+3. Navigate to **APIs & Services → OAuth consent screen**
+4. Fill out required info
 5. Go to **Credentials → Create Credentials → OAuth Client ID**
 6. Choose **Web Application**
-7. Add this under **Authorized redirect URIs**:
+7. Add this to **Authorized redirect URIs**:
 
 ```
 http://localhost:5000/auth/google/callback
 ```
 
-8. After creation, copy:
+8. Add these to your `.env`:
 
 ```env
 GOOGLE_CLIENT_ID=your_client_id
@@ -156,10 +158,10 @@ GOOGLE_CLIENT_SECRET=your_client_secret
 
 ---
 
-### 🔸 Gemini API Key
+### Gemini API Key
 
-1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Create your Gemini API key
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create and copy your Gemini API key
 3. Add it to `.env`:
 
 ```env
@@ -168,21 +170,15 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ---
 
-## ⚠️ Security Notes
+## Security Best Practices
 
-- ✅ `.env` is listed in `.gitignore` — **never commit your secrets**
-- ❌ If secrets are accidentally pushed:
-  - Immediately regenerate them
-  - Use `git filter-repo` to remove them from commit history
-
----
-
-## 🙌 Contributing
-
-Want to contribute? Feel free to fork the project and submit a pull request. Issues and suggestions are welcome!
+- `.env` is listed in `.gitignore` and should never be committed.
+- If secrets are accidentally committed:
+  - Regenerate keys immediately
+  - Use tools like `git filter-repo` to scrub them from history
 
 ---
 
-## 📄 License
+## License
 
 MIT License © 2025 [Tejas Bamane](https://github.com/Tejasbamane007)
