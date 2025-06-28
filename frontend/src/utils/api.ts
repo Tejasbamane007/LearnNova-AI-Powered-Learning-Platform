@@ -1,4 +1,4 @@
-export const generateNotes = async (subject: string, level: string): Promise<string> => {
+export const generateNotes = async (subject: string, level: string): Promise<{ notes: string; course: any }> => {
   try {
     console.log("🔍 Generating notes for subject:", subject, "level:", level);
     
@@ -122,7 +122,10 @@ export const generateNotes = async (subject: string, level: string): Promise<str
     // Check if data has the expected structure
     if (!data?.course?.topics) {
       console.error("❌ Unexpected API response format:", data);
-      return "Error: Unexpected API response format. Please try again.";
+      return {
+        notes: "Error: Unexpected API response format. Please try again.",
+        course: null
+      };
     }
     
     // Store the course ID for reference
@@ -159,8 +162,11 @@ export const generateNotes = async (subject: string, level: string): Promise<str
     
     console.log("✅ Formatted notes created, length:", formattedNotes.length);
     
-    // Return both the formatted notes and the course ID
-    return formattedNotes || "No notes found.";
+    // Return both the formatted notes and the course data
+    return {
+      notes: formattedNotes || "No notes found.",
+      course: data.course
+    };
   } catch (err) {
     console.error("❌ Error in generateNotes:", err);
     throw err; // Re-throw to handle in the component
