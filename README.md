@@ -55,7 +55,7 @@
 
 ```bash
 git clone https://github.com/Tejasbamane007/LearNova-AI-powered-learning-managment-system.git
-cd LearnNova
+cd LearnNova-AI-Powered-Learning-Platform
 ```
 
 ---
