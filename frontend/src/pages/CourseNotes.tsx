@@ -169,43 +169,41 @@ export default function CourseNotes() {
 
     try {
       const response = await generateNotes(subject, level);
-      console.log("✅ Notes generated successfully:", response ? "Yes (length: " + response.length + ")" : "No");
+      console.log("✅ Notes generated successfully:", response ? "Yes (length: " + (response.notes?.length || 0) + ")" : "No");
       
-      // Get the newly created course ID from the response
-      if (response) {
-        // Fetch all courses to find the newly created one
-        const coursesResponse = await getMyCourses();
-        console.log("Fetched courses:", coursesResponse);
+      // Get the newly created course from the response
+      if (response && response.course) {
+        const newCourse = response.course;
+        console.log("Found course from API response:", newCourse);
         
-        if (coursesResponse && coursesResponse.courses) {
-          // Find the course with matching subject and level
-          const newCourse = coursesResponse.courses.find(
-            (c: Course) => c.subject === subject && c.difficulty === level
-          );
-          
-          if (newCourse) {
-            console.log("Found matching course:", newCourse);
-            setCourse(newCourse);
-            setTopics(newCourse.topics);
-            
-            // Update URL state with the new courseId
-            window.history.replaceState(
-              { ...location.state, courseId: newCourse._id },
-              '',
-              location.pathname
-            );
-            
-            toast({
-              title: "Success",
-              description: "Notes generated successfully!",
-            });
-          } else {
-            console.error("Could not find the newly created course");
-            toast({
-              title: "Warning",
-              description: "Notes were generated but the course could not be loaded. Please refresh the page.",
-            });
-          }
+        setCourse(newCourse);
+        setTopics(newCourse.topics);
+        
+        // Update URL state with the new courseId
+        window.history.replaceState(
+          { ...location.state, courseId: newCourse._id },
+          '',
+          location.pathname
+        );
+        
+        toast({
+          title: "Success",
+          description: "Notes generated successfully!",
+        });
+      } else {
+        console.error("Could not get course from API response");
+        // Check if it's an error message
+        if (response && response.notes && response.notes.startsWith("Error:")) {
+          toast({
+            title: "Error",
+            description: response.notes,
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Warning",
+            description: "Notes were generated but the course could not be loaded. Please refresh the page.",
+          });
         }
       }
     } catch (error) {
