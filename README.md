@@ -170,7 +170,3 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ---
 
-
-## License
-
-MIT License © 2025 [Tejas Bamane](https://github.com/Tejasbamane007)
