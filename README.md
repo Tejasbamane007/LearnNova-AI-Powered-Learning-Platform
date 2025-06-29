@@ -168,5 +168,4 @@ GOOGLE_CLIENT_SECRET=your_client_secret
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
----
 
